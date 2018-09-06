@@ -1,0 +1,23 @@
+{
+	"name": "ekmsappconfigjs",
+	"version": "1.0.0",
+	"license": "UNLICENSED",
+	"description": "baenae.de",
+	"author": "Benjamin Sasse",
+	"scripts": {
+		"build": "gulp"
+	},
+	"dependencies": {
+		"gulp-uglify": "^3.0.1",
+		"jquery": "^3.3.1",
+		"scrollmagic": "^2.0.5",
+		"gsap": "^2.0.2"
+	},
+	"devDependencies": {
+		"del": "^3.0.0",
+		"gulp": "^3.9.1",
+		"gulp-clean-css": "^3.10.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-npm-dist": "^0.1.6"
+	}
+}
