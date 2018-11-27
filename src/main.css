@@ -58,6 +58,36 @@ section {
 	background-color: #0e587f;
 }
 
+header menu {
+	background-color: #0d587f;
+	padding: 0 0 0 80px;
+	position: fixed;
+	width: 100%;
+	max-width: calc(1000px - 80px);
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 801px) { 
+	section { padding: 20px 50px 50px 50px; }
+	header menu { padding: 0 0 0 30px; max-width: calc(1000px - 30px); }
+}
+
+@media only screen and (max-width:  800px) and (min-width: 601px) { 
+	section { padding: 20px 40px 50px 40px; }
+	header menu { padding: 0 0 0 20px; max-width: calc(1000px - 20px); }
+}
+
+@media only screen and (max-width:  600px) and (min-width: 401px) { 
+	section { padding: 20px 30px 50px 30px; }
+	header menu { padding: 0 0 0 10px; max-width: calc(1000px - 10px); }
+}
+
+@media only screen and (max-width:  400px) { 
+	section { padding: 20px 20px 50px 20px; }
+	header menu { padding: 0; max-width: 1000px; }
+}
+
 header {
 	background-color: #c1bbb6;
 	margin: 0;
@@ -68,16 +98,6 @@ header img {
 	width: 100%;
 	height: auto;
 	display: block;
-}
-
-header menu {
-	background-color: #0d587f;
-	padding: 0 0 0 80px;
-	position: fixed;
-	width: 100%;
-	max-width: calc(1000px - 80px);
-	display: flex;
-	flex-wrap: wrap;
 }
 
 header menu a, header menu a:hover, header menu a:active {
@@ -100,16 +120,20 @@ header menu a:hover {
 }
 
 #contact table {
-	width: 50%;
+	width: 100%;
+	min-width: 300px;
 }
 
 #contact div {
 	width: 50%;
+	min-width: 300px;
 	justify-content: flex-end;
 }
 
 #contact img {
-	max-width: 300px;
+	max-width: 350px;
+	min-width: 200px;
+	width: 100%;
 	border-radius: 50%;
 	display: block;
 	margin: 0 0 0 auto;
@@ -195,10 +219,34 @@ header menu a:hover {
 	padding-left: 20px;
 }
 
+
+@media only screen and (max-width:  710px) { 
+	#imprint .left { padding-right: 0; }
+	#imprint .right { padding-left: 0; }
+}
+
 #imprint ul {
 	margin: 0 0 20px 0;
 }
 
 #imprint li {
 	margin: 0 0 5px 20px;
+}
+
+#code {
+	background-color: #cdcccc;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#code i {
+	margin-right: 30px;
+	font-size: 30px;
+	color: #666;
+	width: 30px;
+	height: 30px;
+}
+
+#code a i {
+	color: #0d587f;
 }
