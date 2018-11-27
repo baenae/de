@@ -14,19 +14,20 @@ body, div, section, header, p, ul, li, h1, h2, h3, h4, menu, a {
 	padding: 0;
 	border: 0;
 	font-family: 'Open Sans Light', sans-serif;
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 1em;
 }
 
 h2 {
 	font-size: 2em;
-	display: none;
+	font-weight: 300;
+	width: 100%;
+	margin: 30px 0 10px 0;
 }
 
 h3, h4 {
 	font-family: 'Open Sans SemiBold', sans-serif;
 	font-weight: 600;
-
 	margin: 20px 0 10px 0;
 }
 
@@ -43,12 +44,8 @@ body {
 	border: 0;
 }
 
-.scrollmagic-pin-spacer {
-	vertical-align: top;
-}
-
 #page {
-	box-shadow: 0px 0px 200px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4);
 	margin-left: auto;
 	margin-right: auto;
 	max-width: calc(1000px);
@@ -62,75 +59,110 @@ section {
 
 header {
 	background-color: #c1bbb6;
-	background-image: url("img/header.jpg");
-
-	background-position: center;
-	height: 450px;
-	background-size: 120%;
-	background-repeat: no-repeat;
+	margin: 0;
+	padding: 0;
 }
 
-menu {
-	background-color: #848581;
-	color: white;
-	padding: 5px 0 5px 60px;
+header img {
+	width: 100%;
+	height: auto;
+	display: block;
 }
 
-menu a, menu a:hover, menu a:active {
+header menu {
+	background-color: #0d587f;
+	padding: 0 0 0 80px;
+	position: fixed;
+	width: 100%;
+	max-width: calc(1000px - 80px);
+	display: flex;
+	flex-wrap: wrap;
+}
+
+header menu a, header menu a:hover, header menu a:active {
 	color: white;
 	text-decoration: none;
-	padding-left: 40px;
+	padding: 5px 20px 5px 20px;
+	display: block;
 }
 
-.scrollScale1 header {
-	background-size: 100%;
-	height: 220px;
-}
-
-.scrollScale2 header {
-	background-size: 100%;
-	height: 220px;
+header menu a:hover {
+	background-color: white;
+	color: #0d587f;
 }
 
 #contact {
 	background-color: white;
+	vertical-align: top;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#contact table {
+	width: 50%;
+}
+
+#contact div {
+	width: 50%;
+	justify-content: flex-end;
+}
+
+#contact img {
+	max-width: 300px;
+	border-radius: 50%;
+	display: block;
+	margin: 0 0 0 auto;
 }
 
 #connect {
 	background-color: #cdcccc;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 #connect ul {
 	font-size: 0;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 #connect li {
 	width: 150px;
 	height: 150px;
 	margin: 0 10px 10px 0;
-	display: inline-block;
 	background-color: white;
 	list-style-type: none;
 }
 
-.address {
+#imprint {
+	background-color: white;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#imprint .address {
 	margin: 20px;
 }
 
-.half {
+#imprint .half {
 	max-width: calc(50% - 30px);
+	min-width: 300px;
 	display: inline-block;
 	vertical-align: top;
 }
 
-.left {
+#imprint .left {
 	padding-right: 20px;
 }
 
-.right {
+#imprint .right {
 	padding-left: 20px;
 }
 
-#imprint {
-	background-color: white;
+#imprint ul {
+	margin: 0 0 20px 0;
+}
+
+#imprint li {
+	margin: 0 0 5px 20px;
 }
