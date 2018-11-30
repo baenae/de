@@ -3,11 +3,11 @@
 }
 
 
-body, div, section, header, p, ul, li, h1, h2, h3, h4, menu, a {
+body, div, section, header, p, ul, li, h1, h2, h3, h4, menu, a, button, i {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-family: 'Open Sans Light', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	font-size: 1em;
 }
@@ -24,7 +24,7 @@ h2 {
 	font-size: 2em;
 	font-weight: 300;
 	width: 100%;
-	margin: 30px 0 10px 0;
+	margin: 50px 0 10px 0;
 }
 
 h3, h4 {
@@ -62,13 +62,14 @@ header menu {
 	background-color: #0d587f;
 	padding: 0 0 0 80px;
 	position: fixed;
+	z-index: 1;
 	width: 100%;
 	max-width: calc(1000px - 80px);
 	display: flex;
 	flex-wrap: wrap;
 }
 
-@media only screen and (max-width: 1000px) and (min-width: 801px) { 
+@media only screen and (max-width: 1000px) and (min-width: 801px) {
 	section { padding: 20px 50px 50px 50px; }
 	header menu { padding: 0 0 0 30px; max-width: calc(1000px - 30px); }
 }
@@ -105,6 +106,7 @@ header menu a, header menu a:hover, header menu a:active {
 	text-decoration: none;
 	padding: 5px 20px 5px 20px;
 	display: block;
+	transition: all .3s ease;
 }
 
 header menu a:hover {
@@ -151,47 +153,104 @@ header menu a:hover {
 }
 
 #connect li {
-	width: 150px;
-	height: 150px;
-	margin: 0 10px 10px 0;
+	width: 140px;
+	height: 140px;
+	margin: 0 20px 20px 0;
 	list-style-type: none;
 	text-align: center;
 }
 
 #connect a {
-	width: calc(100% - 10px);
-	height: calc(100% - 10px);
+	width: 100%;
+	height: 100%;
 	text-decoration: none;
 	background-color: white;
 	display: block;
+	border-radius: 3px;
 	color: #0d587f;
-	transition: background-color 0.5s;
+	transition: all .2s ease;
+	position: relative;
 }
 
 #connect a:hover {
 	background-color: #0d587f;
 	color: white;
+	transform: translate(-5px, -5px) scale(1.05, 1.05);
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
 }
 
+#connect a:active {
+	background-color: black;
+}
 
 #connect li a i {
-	margin-top: 30px;
+	position: absolute;
+	top: 30px;
+	left: 0px;
 	font-size: 60px;
-	color: #0d587f;
 	width: 100%;
 	height: 70px;
+	transition: all .2s ease;
+	color: #0d587f;
+	overflow: hidden;
+	user-select: none;
+}
+
+#connect li a:hover p {
+	 color: white;
 }
 
 #connect li a:hover i {
 	color: white;
+	opacity: 0;
+	animation-name: fadeInConnect;
+	animation-delay: 0.2s;
+	animation-duration: 0.3s; 
+	animation-timing-function: ease;
+	animation-fill-mode: forwards; 
 }
 
-#connect a li p {
+@keyframes fadeInConnect {
+	0%   { top: 50px; opacity: 0; }
+	75% { top: 22px; opacity: 1; }
+	100% { top: 30px; opacity: 1; }
+}
+
+#connect li a p {
+	position: absolute;
+	top: 100px;
+	left: 0px;
 	display: block;
 	width: 100%;
 	height: 30px;
 	text-align: center;
 	color: #0d587f;
+	user-select: none;
+
+}
+
+@media only screen and (max-width: 800px) { 
+	#connect li {
+		width: 100px;
+		height: 100px;
+	}
+
+	#connect li a i {
+		top: 20px;
+		font-size: 40px;
+		width: 100%;
+		height: 40px;
+	}
+
+	#connect li a p {
+		top: 70px;
+	}
+
+	@keyframes fadeInConnect {
+		0%   { top: 40px; opacity: 0; }
+		75% { top: 15px; opacity: 1; }
+		100% { top: 20px; opacity: 1; }
+	}
 }
 
 #imprint {
@@ -239,14 +298,190 @@ header menu a:hover {
 	flex-wrap: wrap;
 }
 
-#code i {
-	margin-right: 30px;
-	font-size: 30px;
-	color: #666;
-	width: 30px;
-	height: 30px;
+#code h3 {
+	width: 100%;
 }
 
-#code a i {
+#code a {
+	margin-right: 30px;
+	color: #666;
+	text-decoration: none;
+}
+
+#code i {
+	font-size: 30px;
+}
+
+/* MODALER SCREEN */
+#modal {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+
+#modal #background {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 3;
+}
+
+#modal #background {
+	background-color: #cdcccc;
+	opacity: 0.85;
+}
+
+#dialogWindow {
+	position: fixed;
+	top: 50%;
+ 	left: 50%;
+  	transform: translate(-50%, -50%);
+	background-color: white;
+	border-radius: 3px;
+	width: 500px;
+  	max-width: 100%;
+  	min-width: 300px;
+	z-index: 4;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
+}
+
+#dialogWindowInner {
+	top: 20px;
+	width: calc(100% - 40px);
+	padding: 30px;
+}
+
+#dialogWindowInner h2 {
+	margin: 0 0 20px 0;
+}
+
+#dialogWindowInner p {
+	margin: 0 0 20px 0;
+}
+
+#dialogWindowInner #npcChoice {
+	font-weight: 700;
+	text-transform: uppercase;
 	color: #0d587f;
+}
+
+#playerChoiceBox {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#playerChoiceBox div {
+	padding: 10px 5px 0px 5px;
+	margin: 0 10px 20px 0;
+
+	width: 80px;
+	height: 90px;
+
+	background-color: white;
+	display: block;
+	text-align: center;
+
+	border: 3px;
+	border-color: white;
+	border-style: solid;
+	border-radius: 10px;
+
+	position: relative;
+}
+
+#playerChoiceBox div:hover {
+	background-color: #cdcccc;
+}
+
+#playerChoiceBox .current {
+	border-color: #0d587f;
+	border-style: solid;
+	background-color: #cdcccc;
+}
+
+#playerChoiceBox .current:hover {
+	background-color: #cdcccc;
+}
+
+#playerChoiceBox div i {
+	position: absolute;
+	top: 10px;
+	left: 0px;
+	width: 100%;
+
+	font-size: 50px;
+	color: #0d587f;
+}
+
+#playerChoiceBox div p {
+	position: absolute;
+	top: 60px;
+	left: 0px;
+
+	color: #0d587f;
+	width: 100%;
+	padding-top: 5px;
+}
+
+#playerChoiceBox .current i {
+	opacity: 0;
+	animation-name: fadeInPlayerChoice;
+	animation-delay: 0.2s;
+	animation-duration: 0.3s; 
+	animation-timing-function: ease;
+	animation-fill-mode: forwards; 
+}
+
+@keyframes fadeInPlayerChoice {
+	0%		{ top: 40px; opacity: 0; }
+	75%		{ top: 2px; opacity: 1; }
+	100%	{ top: 10px; opacity: 1; }
+}
+
+#dialogWindow #buttonMenu {
+	width: auto;
+	margin: 0 0 0 auto;
+	background-color: #0d587f;
+	text-align: right;
+}
+
+#dialogWindow #buttonMenu button {
+	border: 0px;
+	padding: 5px 20px 5px 20px;
+	margin: 10px;
+	border-radius: 3px;
+	color: white;
+	background-color: #0d587f;
+}
+
+#goButton {
+	font-weight: 700;
+}
+
+#dialogWindow #buttonMenu button:hover {
+	color: #0d587f;
+	background-color: white;
+}
+
+#dialogWindow #buttonMenu button i {
+	font-size: 50px;
+	color: #0d587f;
+}
+
+@media only screen and (max-width:  500px) { 
+	#playerChoiceBox div {
+		padding: 10px;
+		margin: 0 10px 20px 0;
+		width: auto;
+		height: 55px;
+	}
+
+	#playerChoiceBox div i {
+		font-size: 30px;
+	}
 }
