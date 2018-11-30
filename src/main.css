@@ -55,13 +55,13 @@ body {
 
 section {
 	padding: 20px 100px 50px 100px;
-	background-color: #0e587f;
 }
 
 header menu {
 	background-color: #0d587f;
 	padding: 0 0 0 80px;
 	position: fixed;
+	top: 0;
 	z-index: 1;
 	width: 100%;
 	max-width: calc(1000px - 80px);
@@ -69,23 +69,31 @@ header menu {
 	flex-wrap: wrap;
 }
 
+#imprintLong { display: block; }
+#imprintShort { display: none; }
+
+@media only screen and (max-width: 500px) {
+	#imprintLong { display: none; }
+	#imprintShort { display: block; }
+}
+
 @media only screen and (max-width: 1000px) and (min-width: 801px) {
-	section { padding: 20px 50px 50px 50px; }
+	#page section { padding: 20px 30px 50px 50px; }
 	header menu { padding: 0 0 0 30px; max-width: calc(1000px - 30px); }
 }
 
-@media only screen and (max-width:  800px) and (min-width: 601px) { 
-	section { padding: 20px 40px 50px 40px; }
+@media only screen and (max-width: 800px) and (min-width: 601px) { 
+	#page section { padding: 20px 20px 50px 40px; }
 	header menu { padding: 0 0 0 20px; max-width: calc(1000px - 20px); }
 }
 
-@media only screen and (max-width:  600px) and (min-width: 401px) { 
-	section { padding: 20px 30px 50px 30px; }
+@media only screen and (max-width: 600px) and (min-width: 401px) { 
+	#page section { padding: 20px 10px 50px 30px; }
 	header menu { padding: 0 0 0 10px; max-width: calc(1000px - 10px); }
 }
 
-@media only screen and (max-width:  400px) { 
-	section { padding: 20px 20px 50px 20px; }
+@media only screen and (max-width: 400px) { 
+	#page section { padding: 20px 10px 50px 20px; }
 	header menu { padding: 0; max-width: 1000px; }
 }
 
@@ -96,6 +104,7 @@ header {
 }
 
 header img {
+	margin-top: 30px;
 	width: 100%;
 	height: auto;
 	display: block;
@@ -145,11 +154,13 @@ header menu a:hover {
 	background-color: #cdcccc;
 	display: flex;
 	flex-wrap: wrap;
+	padding: 20px 80px 50px 100px;
 }
 
 #connect ul {
 	display: flex;
 	flex-wrap: wrap;
+	width: auto;
 }
 
 #connect li {
@@ -204,7 +215,7 @@ header menu a:hover {
 	color: white;
 	opacity: 0;
 	animation-name: fadeInConnect;
-	animation-delay: 0.2s;
+	animation-delay: 0.5s;
 	animation-duration: 0.3s; 
 	animation-timing-function: ease;
 	animation-fill-mode: forwards; 
@@ -251,6 +262,33 @@ header menu a:hover {
 		75% { top: 15px; opacity: 1; }
 		100% { top: 20px; opacity: 1; }
 	}
+}
+
+#connect #connectOpen {
+	width: 300px;
+	overflow: hidden;
+}
+
+#connect #connectOpen div label {
+	font-weight: 700;
+	margin-right: 5px;
+	display: inline;
+}
+
+#connect #connectOpen div {
+	text-align: left;
+	padding: 7px 0 0 0;
+}
+
+#connect #connectOpen a {
+	display: inline;
+	background-color: transparent;
+	width: auto;
+}
+
+#connect #connectOpen a:hover {
+	box-shadow: none;
+	background-color: transparent;
 }
 
 #imprint {
@@ -475,13 +513,23 @@ header menu a:hover {
 
 @media only screen and (max-width:  500px) { 
 	#playerChoiceBox div {
-		padding: 10px;
-		margin: 0 10px 20px 0;
-		width: auto;
-		height: 55px;
+		padding: 5px 10px 5px 10px;
+		margin: 5px;
+
+		width: 60px;
+		height: 60px;
 	}
 
 	#playerChoiceBox div i {
 		font-size: 30px;
 	}
+
+	#playerChoiceBox div p {
+		top: 35px;
+		left: 0px;
+	}
+}
+
+.hide {
+	display: none;
 }

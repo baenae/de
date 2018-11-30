@@ -17,10 +17,17 @@ const SCHERE = "schere";
 const STEIN = "stein";
 const PAPIER = "papier";
 
+//Schere stein papier des Computers
 var npcChoice = "";
+
+//Schere Stein papier des Spielers
 var playerChoise = "";
 
+//Welche Connection soll geöffnet werden
 var selectedConnection = "";
+
+//Daten die geladen wurden für Connection
+var connectionData = undefined;
 
 $(document).ready(function () {
 	$("#connect a").each(function( index ) {
@@ -31,7 +38,7 @@ $(document).ready(function () {
 	$("#userSelect_rock").click(function(options) { selectPlayerHand('rock', options)});
 	$("#userSelect_paper").click(function(options) { selectPlayerHand('paper', options)});
 
-	$("#goButton").click(function(options) { loadAccess()});
+	$("#goButton").click(function(options) { openConnectContent()});
 	$("#closeButton").click(function(options) { cancel()});
 });
 
@@ -58,9 +65,16 @@ function generateNPCHand() {
 function openConnection(id) {
 	selectedConnection = id;
 
-	generateNPCHand();
-	$("#modal").fadeIn(300);
-	$('#npcChoice').text(npcChoice);
+	//Der Suchmaschienen Schutz wurde noch nicht freigeschaltet
+	if (connectionData === undefined) {
+		generateNPCHand();
+		$("#modal").fadeIn(300);
+		$('#npcChoice').text(npcChoice);
+	} 
+	//Es wurde schon freigeschaltet
+	else {
+		openConnectContent();
+	}
 }
 
 /**
@@ -75,7 +89,7 @@ function selectPlayerHand(selectPlayerChoise, options) {
 			playerChoise = selectPlayerChoise;
 
 			//Zugangsbutton einblenden
-			$("#goButton").removeClass("hidden");
+			$("#goButton").removeClass("hide");
 
 			//Alle select klassen entfernen und das aktuelle einblenden
 			$("#userSelect_scissors").removeClass("current");
@@ -93,8 +107,33 @@ function selectPlayerHand(selectPlayerChoise, options) {
 	}
 }
 
-function loadAccess() {
+/**
+ * Öffnet ein connect Element
+ */
+function openConnectContent() {
+	//Fenster scliessen
+	cancel();
 
+	//Gibt es schon ein Element, wenn ja dann dieses entfernen
+	if (undefined !== $('#connectOpen')) {
+		$('#connectOpen').remove();
+	}
+
+	//Content erzeugen
+	if (selectedConnection !== "") {
+		let container = $('<li id="connectOpen"></li>');
+		let content1 = $('<div><label>Benutzung für: </label>Warhammer</div>');
+		let content2 = $('<div><label>Benutzung für: </label>Warhammer</div>');
+		let content3 = $('<div><label>Benutzung für: </label>Warhammer</div>');
+
+		content1.prependTo(container);
+		content2.prependTo(container);
+		content3.prependTo(container);
+
+		let toElement = $('#' + selectedConnection).parent();
+
+		container.insertAfter(toElement);
+	}
 }
 
 /**
@@ -103,6 +142,9 @@ function loadAccess() {
 function cancel() {
 	//Auswahl zurücksetzen
 	playerChoise = "";
+
+	//Zugangsbutton einblenden
+	$("#goButton").addClass("hide");
 
 	//Alle select klassen entfernen und das aktuelle einblenden
 	$("#userSelect_scissors").removeClass("current");
