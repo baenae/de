@@ -4,30 +4,40 @@
 		<title>baenae ihm seine private Heimseite</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link href="main.css" rel="stylesheet">
+		
+		<!-- Schriften -->
+		<link rel="stylesheet" href="./de/fontawesome-5-5-0-min.css">
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="./de/img/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./de/img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./de/img/favicon-16x16.png">
+		<link rel="manifest" href="./de/site.webmanifest">
+		<link rel="mask-icon" href="./de/img/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
 
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-		<link rel="manifest" href="site.webmanifest">
-		<link rel="apple-touch-icon" href="icon.png">
 
-		<script src="vendor.js"></script>
-		<script src="app.js"></script>
+		<link href="./de/main.css" rel="stylesheet">
+
+		<link rel="apple-touch-icon" href="./de/img/icon.png">
+
+		<script src="./de/vendor.js"></script>
+		<script src="./de/app.js"></script>
 	</head>
 	<body>
 		<div id="page">
 			<header id="header">
 				<menu>
-					<a href="#contact">Kontakt</a>
+					<a href="#hello">Hallo</a>
 					<a href="#connect">Verbinden</a>
 					<a id="imprintLong" href="#imprint">Impressum & Datenschutz</a>
 					<a id="imprintShort" href="#imprint">Impressum</a>
 				</menu>
-				<img src="img/header.jpg" alt="Baenae.de Logo auf Beton" title="Baenae.de Logo auf Beton" />
+				<img src="./de/img/header.jpg" alt="Baenae.de Logo auf Beton" title="Baenae.de Logo auf Beton" />
 			</header>
 
-			<section id="contact">
-				<h2>Kontakt</h2>
+			<section id="hello">
+				<h2>Hallo, ich bin Bänä</h2>
 				<div>
 					<table>
 						<tr>
@@ -35,26 +45,22 @@
 							<td>Benjamin Sasse</td>
 						</tr>
 						<tr>
-							<td>E-Mail:</td>
-							<td>siehe verbinden unter <i class="far fa-envelope"></td>
+							<td>Bänä?</td>
+							<td>Spitzname, Künstlername, Nickname... manchmal auch Benny, aber eher selten</td>
 						</tr>
 						<tr>
-							<td>Adresse:</td>
-							<td>Siehe verbinden unter <i class="fas fa-home"></i></td>
-						</tr>
-						<tr>
-							<td>Internet</td>
-							<td>baenae.de<br />bänä.de</td>
+							<td>Was soll das hier?</td>
+							<td>Ich bin Entwickler, Designer, Spielkind und Poser. Deswegen :)</td>
 						</tr>
 					</table>
 				</div>
 				<div>
-					<img src="img/profilbild.jpg" alt="Foto von Benjamin" title="Foto von Benjamin">
+					<img src="./de/img/profilbild.jpg" alt="Foto von Benjamin" title="Foto von Benjamin">
 				</div>
 			</section>
 
 			<section id="connect">
-				<h2>Verbinden</h2>
+				<h2>Verbinden &amp; Kontakt</h2>
 				<ul>
 					<li><a id="adresse"><i class="fas fa-home"></i><p>Adresse</p></a></li>
 					<li><a id="email"><i class="far fa-envelope"></i><p>E-Mail</p></a></li>
@@ -126,7 +132,7 @@
 				<a href="https://www.w3.org/" target="_blank"><i class="fab fa-html5"></i></a>
 				<a href="https://de.wikipedia.org/wiki/JavaScript" target="_blank"><i class="fab fa-js"></i></a>
 				<a href="https://www.w3.org/Style/CSS/" target="_blank"><i class="fab fa-css3"></i></a>
-				<a href="https://github.com/baenae" target="_blank"><i class="fab fa-github"></i></a>
+				<a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
 				<a href="https://gulpjs.com/" target="_blank"><i class="fab fa-gulp"></i></a>
 				<a href="https://www.npmjs.com/" target="_blank"><i class="fab fa-npm"></i></a>
 				<a href="https://nodejs.org/en/" target="_blank"><i class="fab fa-node"></i></a>
@@ -137,16 +143,27 @@
 		</div>
 		<div id="modal" style="display: none">
 			<div id="dialogWindow">
-				<div id="dialogWindowInner">
+				<div id="dialogWindowLoading">
+					<div><i class="fas fa-spinner"></i></div>
+				</div>
+				<div id="dialogWindowError">
+					<h2>Fehler</h2>
+					<p>Es ist ein Fehler aufgetreten. Bitte versuche es gleich nochmal.</p>
+					<p>
+						Du kennst &bdquo;Schere, Stein, Papier&ldquo; nicht? 
+						Dann schau mal bei <a href="https://de.wikipedia.org/wiki/Schere,_Stein,_Papier" target="_blank">Wikipedia</a> <i class="fas fa-external-link-alt"></i> vorbei und lies die Regeln.
+					</p>
+				</div>
+				<div id="dialogWindowForm">
 					<h2>Inhalt anzeigen</h2>
 					<p>Beweise mir, dass du ein Mensch bist und keine Suchmaschine.<p>
 					<p>Spiele gegen mich Schere, Stein, Papier. Ich habe <span id="npcChoice"></span>. 
 						Wähle das Symbol, mit dem du mich schlägst und du erhälst Zugang.
 					</p>
 					<div id="playerChoiceBox">
-						<div id="userSelect_scissors"><i class="far fa-hand-scissors"></i><p>Schere</p></div>
-						<div id="userSelect_rock"><i class="far fa-hand-rock"></i><p>Stein</p></div>
-						<div id="userSelect_paper"><i class="far fa-hand-paper"></i><p>Papier</p></div>
+						<div id="userSelect_schere"><i class="far fa-hand-scissors"></i><p>Schere</p></div>
+						<div id="userSelect_stein"><i class="far fa-hand-rock"></i><p>Stein</p></div>
+						<div id="userSelect_papier"><i class="far fa-hand-paper"></i><p>Papier</p></div>
 					</div>
 					<p>
 						Du kennst &bdquo;Schere, Stein, Papier&ldquo; nicht? 

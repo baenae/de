@@ -2,6 +2,20 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
+@font-face {
+	font-family: 'Open Sans Light';
+	src: url("./fonts/OpenSans-Light.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: 'Open Sans Bold';
+	src: url("./fonts/OpenSans-Bold.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: 'Open Sans Regular';
+	src: url("./fonts/OpenSans-Regular.ttf") format('truetype');
+}
 
 body, div, section, header, p, ul, li, h1, h2, h3, h4, menu, a, button, i {
 	margin: 0;
@@ -34,7 +48,8 @@ h3, h4 {
 
 td {
 	vertical-align: top;
-	padding: 0 50px 10px 0;
+	padding: 0 40px 10px 0;
+	min-width: 100px;
 }
 
 body {
@@ -123,25 +138,25 @@ header menu a:hover {
 	color: #0d587f;
 }
 
-#contact {
+#hello {
 	background-color: white;
 	vertical-align: top;
 	display: flex;
 	flex-wrap: wrap;
 }
 
-#contact table {
+#hello table {
 	width: 100%;
 	min-width: 300px;
 }
 
-#contact div {
+#hello div {
 	width: 50%;
 	min-width: 300px;
 	justify-content: flex-end;
 }
 
-#contact img {
+#hello img {
 	max-width: 350px;
 	min-width: 200px;
 	width: 100%;
@@ -240,7 +255,28 @@ header menu a:hover {
 
 }
 
+#connect #connectOpen {
+	width: 300px;
+	overflow: hidden;
+	opacity: 0;
+
+	animation-name: fadeInConnectOpen;
+	animation-duration: 0.6s; 
+	animation-timing-function: ease;
+	animation-fill-mode: forwards; 
+}
+
 @media only screen and (max-width: 800px) { 
+	#connect #connectOpen {
+		width: 220px;
+	}
+
+	#connect #connectOpen div, #connect #connectOpen h2 {
+		font-size: 0.8em;
+		padding: 0;
+		margin: 0;
+	}
+
 	#connect li {
 		width: 100px;
 		height: 100px;
@@ -264,9 +300,9 @@ header menu a:hover {
 	}
 }
 
-#connect #connectOpen {
-	width: 300px;
-	overflow: hidden;
+@keyframes fadeInConnectOpen {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 #connect #connectOpen div label {
@@ -277,7 +313,7 @@ header menu a:hover {
 
 #connect #connectOpen div {
 	text-align: left;
-	padding: 7px 0 0 0;
+	padding: 5px 0 0 0;
 }
 
 #connect #connectOpen a {
@@ -289,6 +325,13 @@ header menu a:hover {
 #connect #connectOpen a:hover {
 	box-shadow: none;
 	background-color: transparent;
+}
+
+#connect #connectOpen h3  {
+	font-weight: 300;
+	font-size: 1.5em;
+	margin: 0;
+	padding: 0;
 }
 
 #imprint {
@@ -315,7 +358,6 @@ header menu a:hover {
 #imprint .right {
 	padding-left: 20px;
 }
-
 
 @media only screen and (max-width:  710px) { 
 	#imprint .left { padding-right: 0; }
@@ -388,21 +430,31 @@ header menu a:hover {
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
 }
 
-#dialogWindowInner {
+#dialogWindowForm, #dialogWindowLoading, #dialogWindowError {
 	top: 20px;
 	width: calc(100% - 40px);
 	padding: 30px;
 }
 
-#dialogWindowInner h2 {
+#dialogWindowLoading div {
+	margin: 100px 0 100px 0;
+	text-align: center;
+}
+
+#dialogWindowLoading div i {
+	font-size: 40px;
+	animation: rotating 1s linear infinite;
+}
+
+#dialogWindowForm h2, #dialogWindowError h2 {
 	margin: 0 0 20px 0;
 }
 
-#dialogWindowInner p {
+#dialogWindowForm p, #dialogWindowError p {
 	margin: 0 0 20px 0;
 }
 
-#dialogWindowInner #npcChoice {
+#dialogWindowForm #npcChoice {
 	font-weight: 700;
 	text-transform: uppercase;
 	color: #0d587f;
@@ -424,7 +476,7 @@ header menu a:hover {
 	display: block;
 	text-align: center;
 
-	border: 3px;
+	border: 2px;
 	border-color: white;
 	border-style: solid;
 	border-radius: 10px;
@@ -532,4 +584,21 @@ header menu a:hover {
 
 .hide {
 	display: none;
+}
+
+@keyframes rotating {
+	from {
+		-ms-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	to {
+		-ms-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
