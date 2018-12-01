@@ -2,21 +2,6 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
-@font-face {
-	font-family: 'Open Sans Light';
-	src: url("./fonts/OpenSans-Light.ttf") format('truetype');
-}
-
-@font-face {
-	font-family: 'Open Sans Bold';
-	src: url("./fonts/OpenSans-Bold.ttf") format('truetype');
-}
-
-@font-face {
-	font-family: 'Open Sans Regular';
-	src: url("./fonts/OpenSans-Regular.ttf") format('truetype');
-}
-
 body, div, section, header, p, ul, li, h1, h2, h3, h4, menu, a, button, i {
 	margin: 0;
 	padding: 0;
