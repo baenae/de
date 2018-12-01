@@ -5,11 +5,7 @@ const concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
 var vendorJSFiles = [
-	'node_modules/jquery/dist/jquery.js',
-	'node_modules/gsap/src/minified/TweenMax.min.js',
-	'node_modules/gsap/src/minified/plugins/ScrollToPlugin.min.js',
-	'node_modules/scrollmagic/scrollmagic/minified/*.js',
-	'node_modules/scrollmagic/scrollmagic/minified/plugins/*.js'
+	'node_modules/jquery/dist/jquery.js'
 ];
 
 gulp.task('clean', function() {

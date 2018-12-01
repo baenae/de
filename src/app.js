@@ -42,7 +42,6 @@ $(document).ready(function () {
 	$("#closeButton").click(function(options) { cancel()});
 });
 
-
 /**
  * @return Hand des NPSs - SCHERE - STEIN - PAPIER
  */
@@ -125,6 +124,17 @@ function openConnectContent() {
 		let content1 = $('<div><label>Benutzung für: </label>Warhammer</div>');
 		let content2 = $('<div><label>Benutzung für: </label>Warhammer</div>');
 		let content3 = $('<div><label>Benutzung für: </label>Warhammer</div>');
+
+/*
+
+
+					<li id="connectOpen">
+						<div><label>URL: </label><a href="#" target="_blank">www.bsjjnd.de</a>  <i class="fas fa-external-link-alt"></i></div>
+						<div><label>Benutzung: </label><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></div>
+						<div><label>Benutzung für: </label>Warhammer</div>
+					</li>
+
+*/
 
 		content1.prependTo(container);
 		content2.prependTo(container);
