@@ -3,3 +3,4 @@ db
 .idea
 npm-debug.log
 dist
+.DS_Store

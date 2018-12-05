@@ -8,25 +8,11 @@ Schreibe mir gerne eine E-Mail dazu.
 Den Code findest du auch unter GitHub
 
 INFO
-Die Kontaktdaten (JSON) werden erst geladen, wenn der User eine Runde Schere/Stein/Papier gespielt hat.
-Dadurch kann sichergestellt werden, dass die Daten nicht durch Google oder andere Bots indiziert werden können.
-
-Die Hand des Spielers und des NPCs werden an ein PHP Script gepostet. 
+Die Kontaktdaten (JSON) werden erst geladen, wenn auf ein connect-Button geklickt wurde.
 Dieses Script überprüft ob das Ergebis richtig ist und gibt die Kontaktdaten frei.
-
-Dabei ist der NPC Deutsch und der User Englisch um eine automatisierte Zuweisung zu verhindern
+Dabei wird geschaut ob es sich um einen Menschen oder Bot handelt
 
 */
-
-const SCHERE = "schere";
-const STEIN = "stein";
-const PAPIER = "papier";
-
-//Schere stein papier des Computers
-var npcChoice = "";
-
-//Schere Stein papier des Spielers
-var playerChoise = "";
 
 //Welche Connection soll geöffnet werden
 var selectedConnection = "";
@@ -34,33 +20,36 @@ var selectedConnection = "";
 //Daten die geladen wurden für Connection
 var connectionData = undefined;
 
+//Das Click und ScrollData Objekt wird einfach gespeichert um sicherzustellen, dass ein Mensch nach unten gescrollt hat
+var scrollData = undefined;
+var clickData = undefined;
+
+//Die URL zum Service mit den Kontakt-Daten
+const SERVICE_URL = 'http://www.baenae.de/de/getConnect.php?';
+
 $(document).ready(function () {
+	//Funktion auf alle Buttons der Verbindung
 	$("#connect a").each(function( index ) {
-		$(this).click(function() { openConnection($(this).attr("id")) });
+		$(this).click(function(eventData) { 
+			if (undefined !== eventData.currentTarget) {
+				clickData = eventData;
+			}
+			
+			openConnection($(this).attr("id")) 
+		});
 	});
 
-	$("#userSelect_schere").click(function(options) { selectPlayerHand(SCHERE, options)});
-	$("#userSelect_stein").click(function(options) { selectPlayerHand(STEIN, options)});
-	$("#userSelect_papier").click(function(options) { selectPlayerHand(PAPIER, options)});
-
-	$("#goButton").click(function(options) { loadJSON()});
+	//Daten werden erst freigeschaltet, wenn gescrollt wurde
+	//Hierdurch sicherstellen, dass es sich um einen Menschen handelt
+	$( window ).scroll(function(eventData) {
+		if(undefined !== eventData.currentTarget) {
+			scrollData = eventData;
+		}
+	});
+	
+	//Schließen des Fehler fensters
 	$("#closeButton").click(function(options) { cancel()});
 });
-
-/**
- * @return Hand des NPSs - SCHERE - STEIN - PAPIER
- */
-function generateNPCHand() {
-	let random = Math.random() * 10;
-	
-	if (random < 3) {
-		npcChoice = SCHERE;
-	} else if (random < 7) {
-		npcChoice = STEIN;
-	} else {
-		npcChoice = PAPIER;
-	}
-}
 
 /**
  * Was geöffnet werden soll
@@ -71,13 +60,7 @@ function openConnection(id) {
 
 	//Der Suchmaschienen Schutz wurde noch nicht freigeschaltet
 	if (connectionData === undefined) {
-		$('#dialogWindowForm').removeClass("hide");
- 		$('#dialogWindowLoading').addClass("hide");
- 		$('#dialogWindowError').addClass("hide");
-
-		generateNPCHand();
-		$("#modal").fadeIn(300);
-		$('#npcChoice').text(npcChoice);
+		this.loadJSON();
 	} 
 	//Es wurde schon freigeschaltet
 	else {
@@ -91,60 +74,29 @@ function openConnection(id) {
 function loadJSON() {
  	let success = false;
 
- 	//Haben beide gespielt
- 	if (npcChoice !== '' && playerChoise !== '')
- 	{
- 		$('#dialogWindowForm').addClass("hide");
- 		$('#dialogWindowLoading').removeClass("hide");
+	//URL erzeugen
+	let url = SERVICE_URL;
 
- 		//URL erzeugen
- 		let url = 'http://www.baenae.de/de/getConnect.php?player=' + playerChoise.toUpperCase() + '&npc=' + npcChoice.toUpperCase();
-
-		var jqxhr = $.getJSON(url, function() {})
-		.done(function(json) {
-			connectionData = json["connect"];
-			openConnectContent();
-		})
-		.fail(function() {
-			$('#dialogWindowLoading').addClass("hide");
-			$('#dialogWindowError').removeClass("hide");
-
-			//Zugangsbutton einblenden
-			$("#goButton").addClass("hide");
-		})
-		.always(function() {});
- 	}
+	//Hier wird sichergestellt, dass einmal gescrollt wurde, als sicherung, dass es ein Mensch war
+	if (scrollData.currentTarget) {
+		url += "&scroll=" + scrollData.type.toUpperCase();
+	}
+	
+	//Und hier der click
+	if (scrollData.originalEvent.clientX > 0 && scrollData.originalEvent.clientY > 0) {
+		url += "&click=" + clickData.type.toUpperCase();
+	}
+	
+	var jqxhr = $.getJSON(url, function() {})
+	.done(function(json) {
+		connectionData = json["connect"];
+		openConnectContent();
+	})
+	.fail(function() {
+		$("#modal").fadeIn(300);
+	})
+	.always(function() {});
  }
-
-/**
- * @selectPlayerChoise - Was hat der User ausgewählt
- * @options - jQuery Clickoptions
- */
-function selectPlayerHand(selectPlayerChoise, options) {
-	//Sicherstellen, dass wirklich mit maus oder touch geklickt wurde
-	if(options !== undefined && options.originalEvent !== undefined) {
-		//Funltioniert touch?
-		if(options.originalEvent.clientX > 0 && options.originalEvent.clientY > 0) {
-			playerChoise = selectPlayerChoise;
-
-			//Zugangsbutton einblenden
-			$("#goButton").removeClass("hide");
-
-			//Alle select klassen entfernen und das aktuelle einblenden
-			$("#userSelect_schere").removeClass("current");
-			$("#userSelect_stein").removeClass("current");
-			$("#userSelect_papier").removeClass("current");
-
-			//aktuelles einblenden
-			$("#userSelect_" + playerChoise).addClass("current");
-		} else {
-			console.error("No touchposition found");
-		}
-	}
-	else {
-		console.error("Options missing");
-	}
-}
 
 /**
  * Öffnet ein connect Element
@@ -196,7 +148,6 @@ function openConnectContent() {
 					//Hinter das geklickte Element hinzufügen
 					let toElement = $('#' + selectedConnection).parent();
 					container.insertAfter(toElement);
-
 				}
 			}
 		}
@@ -210,14 +161,5 @@ function cancel() {
 	//Auswahl zurücksetzen
 	playerChoise = "";
 
-	//Zugangsbutton einblenden
-	$("#goButton").addClass("hide");
-
-	//Alle select klassen entfernen und das aktuelle einblenden
-	$("#userSelect_schere").removeClass("current");
-	$("#userSelect_stein").removeClass("current");
-	$("#userSelect_papier").removeClass("current");
-
 	$("#modal").fadeOut(300);
-	$("#dialogWindow").animate({scale: "0.8"}, 500);
 }
