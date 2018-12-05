@@ -69,12 +69,10 @@ header menu {
 	flex-wrap: wrap;
 }
 
-#imprintLong { display: block; }
-#imprintShort { display: none; }
+.imprintLong { display: block; }
 
 @media only screen and (max-width: 500px) {
-	#imprintLong { display: none; }
-	#imprintShort { display: block; }
+	.imprintLong { display: none; }
 }
 
 @media only screen and (max-width: 1000px) and (min-width: 801px) {
@@ -133,6 +131,7 @@ header menu a:hover {
 #hello table {
 	width: 100%;
 	min-width: 300px;
+	margin-bottom: 20px;
 }
 
 #hello div {
@@ -325,22 +324,22 @@ header menu a:hover {
 	flex-wrap: wrap;
 }
 
-#imprint .address {
+#imprint .address, #privacy .address {
 	margin: 20px;
 }
 
-#imprint .half {
+.half {
 	max-width: calc(50% - 30px);
 	min-width: 300px;
 	display: inline-block;
 	vertical-align: top;
 }
 
-#imprint .left {
+.left {
 	padding-right: 20px;
 }
 
-#imprint .right {
+.right {
 	padding-left: 20px;
 }
 
@@ -349,33 +348,20 @@ header menu a:hover {
 	#imprint .right { padding-left: 0; }
 }
 
-#imprint ul {
+#privacy {
+	background-color: #cdcccc;
+}
+
+#privacy ul {
 	margin: 0 0 20px 0;
 }
 
-#imprint li {
+#privacy li {
 	margin: 0 0 5px 20px;
 }
 
-#code {
-	background-color: #cdcccc;
-	display: flex;
-	flex-wrap: wrap;
-}
 
-#code h3 {
-	width: 100%;
-}
 
-#code a {
-	margin-right: 30px;
-	color: #666;
-	text-decoration: none;
-}
-
-#code i {
-	font-size: 30px;
-}
 
 /* MODALER SCREEN */
 #modal {

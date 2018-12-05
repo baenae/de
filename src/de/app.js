@@ -78,12 +78,12 @@ function loadJSON() {
 	let url = SERVICE_URL;
 
 	//Hier wird sichergestellt, dass einmal gescrollt wurde, als sicherung, dass es ein Mensch war
-	if (scrollData.currentTarget) {
+	if (undefined !== scrollData && undefined !== scrollData.currentTarget) {
 		url += "&scroll=" + scrollData.type.toUpperCase();
 	}
 	
 	//Und hier der click
-	if (scrollData.originalEvent.clientX > 0 && scrollData.originalEvent.clientY > 0) {
+	if (undefined !== clickData && undefined !== clickData.originalEvent && clickData.originalEvent.clientX > 0 && clickData.originalEvent.clientY > 0) {
 		url += "&click=" + clickData.type.toUpperCase();
 	}
 	

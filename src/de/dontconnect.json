@@ -3,11 +3,13 @@
 		{
 			"id": "adresse",
 			"title": "Adresse",
-			"Ort": "Bremen"
+			"Ort": "28197 Bremen",
+			"Straße": "Wildeshauser Str. 39"
 		},
 		{
 			"id": "email",
-			"title": "E-Mail"
+			"title": "E-Mail",
+			"Mail": "baenae[at]gmx[punkt]de"
 		},
 		{
 			"id": "whatsapp",
@@ -61,6 +63,11 @@
 			"id": "github",
 			"title": "GitHub",
 			"URL": "<a href='https://github.com' target='blank'>github.com</a>"
+		},
+		{
+			"id": "work",
+			"title": "engram GmbH",
+			"URL": "<a href='https://www.engram.de' target='blank'>engram.de</a>"
 		}
 	]
 }

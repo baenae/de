@@ -7,18 +7,23 @@
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="theme-color" content="#ffffff">
 
-		<!-- Schriften -->
+		<!-- jquery -->
+		<script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		
+		<!-- fonts -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" crossorigin="anonymous">
+		
+		<!-- meta Informations an Images -->
 		<link rel="apple-touch-icon" sizes="180x180" href="./de/img/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="./de/img/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="./de/img/favicon-16x16.png">
 		<link rel="manifest" href="./de/site.webmanifest">
 		<link rel="mask-icon" href="./de/img/safari-pinned-tab.svg" color="#5bbad5">
-		<link href="./de/main.css" rel="stylesheet">
-
-		<script src="./de/vendor.js"></script>
-		<script src="./de/app.js"></script>
+		
+		<!-- own code -->
+		<link href="./de/main.css?usecache=niemalsbaby" rel="stylesheet">
+		<script src="./de/app.js?usecache=niemalsbaby"></script>
 	</head>
 	<body>
 		<div id="page">
@@ -26,8 +31,8 @@
 				<menu>
 					<a href="#hello">Hallo</a>
 					<a href="#connect">Verbinden</a>
-					<a id="imprintLong" href="#imprint">Impressum & Datenschutz</a>
-					<a id="imprintShort" href="#imprint">Impressum</a>
+					<a class="imprintLong" href="#imprint">Impressum</a>
+					<a class="imprintLong" href="#privacy">Datenschutz</a>
 				</menu>
 				<img src="./de/img/header.jpg" alt="Baenae.de Logo auf Beton" title="Baenae.de Logo auf Beton" />
 			</header>
@@ -71,19 +76,50 @@
 					<li><a id="skype"><i class="fab fa-skype"></i><p>skype</p></a></li>
 					<li><a id="pinterest"><i class="fab fa-pinterest-square"></i><p>Pinterest</p></a></li>
 					<li><a id="github"><i class="fab fa-github"></i><p>GitHub</p></a></li>
+					<li><a id="work"><i class="fas fa-briefcase"></i></i><p>Arbeit</p></a></li>
 				</ul>
 			</section>
 
 			<section id="imprint">
-				<h2>Impressum und Datenschutz</h2>
-
+				<h2>Impressum</h2>
+				<div class="half left">
+					
+					<h3>Verantwortlicher &amp; Ansprechpartner</h3>
+					<p class="address">Benjamin Sasse <br />Wildeshauser Straße 39<br />28197 Bremen</p>
+					
+					<h3>Kontakt E-Mail </h3>
+					<p class="address">
+						baenae[at]gmx[punkt]de<br/>
+						<br/>
+						Weitere Kontaktmöglichkeiten unter <a href="#connect">Verbinden</a>
+					</p>
+					
+					
+					<p>Private Webseite<p>
+					
+					<!--<h3>Bildrechte</h3>
+					<p class="address">privat</p>-->
+				</div>
+				<div class="half right">
+					<h3>Externe Links</h3>
+					<p>
+						Diese Website enthält Verweise zu Websites von Drittanbietern (Links). 
+						Diese Webseiten unterliegen der Haftung der jeweiligen Betreiber. Beim Erstellen dieser Seite waren keine Rechtsverstöße der Drittanbieter ersichtlich.
+						Benjamin hat keinerlei Einfluss auf die aktuelle und zukünftige Gestaltung und auf die Inhalte der verknüpften Seiten. Benjamin macht sich die externen Inhaltenicht zu Eigen. Eine ständige Kontrolle der externen Links ist für den Anbieter ohne konkrete Hinweise auf Rechtsverstöße nicht zumutbar. Bei Kenntnis von Rechtsverstößen werden jedoch derartige externe Links unverzüglich gelöscht.
+					</p>
+				</div>
+			</section>	
+				
+			<section id="privacy">
+				<h2>Datenschutz</h2>
+				
 				<div class="half left">
 					<h3>Allgemeiner Hinweis und Pflichtinformationen</h3>
 
 					<h4>Benennung der verantwortlichen Stelle</h4>
 					<p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<p>
 
-					<p class="address">Benjamin Sasse <br />Wildeshauser Straße 39<br />28197 Bremen</p>
+					<p class="address">Benjamin Sasse <br />Siehe Webseitenbereiber</p>
 
 					<p>Die verantwortliche Stelle entscheidet allein über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, Kontaktdaten o. Ä.).</p>
 
@@ -97,6 +133,9 @@
 					<p>Ihnen steht das Recht zu, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an Dritte aushändigen zu lassen. Die Bereitstellung erfolgt in einem maschinenlesbaren Format. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.</p>
 				</div>
 				<div class="half right">
+					<h4>Cookie freie Zone</h4>
+					<p>Diese Webseite benutzt <strong>keine Cookies</strong>.</p>
+					
 					<h4>Recht auf Auskunft, Berichtigung, Sperrung, Löschung</h4>
 					<p>Sie haben jederzeit im Rahmen der geltenden gesetzlichen Bestimmungen das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, Herkunft der Daten, deren Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Diesbezüglich und auch zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit über die im Impressum aufgeführten Kontaktmöglichkeiten an uns wenden.</p>
 
@@ -121,20 +160,6 @@
 					<p>Quelle: Datenschutz-Konfigurator von mein-datenschutzbeauftragter.de</p>
 					<p>Mein-Datenschutzbeauftragter.de stellt den Konfigurator für die individuelle Nutzung kostenlos zur Verfügung. Deshalb bitten wir Sie, den Hinweis auf unseren Dienst nicht aus dem Muster zu entfernen. Es ist zudem nicht gestattet, den Konfigurator als Kopie auf der eigenen Homepage einzubinden und/oder das Tool anzubieten.</p>
 				</div>
-			</section>
-
-			<section id="code">
-				<h2>Benutze Werkzeuge</h2>
-				<a href="https://www.w3.org/" target="_blank"><i class="fab fa-html5"></i></a>
-				<a href="https://de.wikipedia.org/wiki/JavaScript" target="_blank"><i class="fab fa-js"></i></a>
-				<a href="https://www.w3.org/Style/CSS/" target="_blank"><i class="fab fa-css3"></i></a>
-				<a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-				<a href="https://gulpjs.com/" target="_blank"><i class="fab fa-gulp"></i></a>
-				<a href="https://www.npmjs.com/" target="_blank"><i class="fab fa-npm"></i></a>
-				<a href="https://nodejs.org/en/" target="_blank"><i class="fab fa-node"></i></a>
-				<a href="http://php.net/" target="_blank"><i class="fab fa-php"></i></a>
-				<a href="https://jquery.com/" target="_blank">jQuery</a>
-				<a href="https://www.adobe.com/de/products/photoshop.html" target="_blank">Photoshop</a>
 			</section>
 		</div>
 		<div id="modal" style="display: none">
