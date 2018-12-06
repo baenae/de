@@ -25,7 +25,7 @@ var scrollData = undefined;
 var clickData = undefined;
 
 //Die URL zum Service mit den Kontakt-Daten
-const SERVICE_URL = 'http://www.baenae.de/de/getConnect.php?';
+const SERVICE_URL = 'https://www.baenae.de/de/getConnect.php?';
 
 $(document).ready(function () {
 	//Funktion auf alle Buttons der Verbindung
