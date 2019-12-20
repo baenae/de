@@ -32,7 +32,12 @@
 		},
 		{
 			"id": "instagram",
-			"title": "Instagram",
+			"title": "Instagram (malen)",
+			"URL": "<a href='https://www.instagram.com' target='blank'>instagram.com</a>"
+		},
+		{
+			"id": "instagram_privat",
+			"title": "Instagram (privat)",
 			"URL": "<a href='https://www.instagram.com' target='blank'>instagram.com</a>"
 		},
 		{
