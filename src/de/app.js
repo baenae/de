@@ -28,10 +28,12 @@ function openPage(pageId) {
 		$('#' + pageId).css('display', 'flex');
 	}
 
+	openPhotoSubPage('photoindex');
+
 	return false;
 }
 
-function openPhotoSubPage(pageID) {
+function openPhotoSubPage(pageId) {
 	$('#photoindex').css('display', 'none');
 	$('#composing').css('display', 'none');
 	$('#portraits').css('display', 'none');
@@ -40,7 +42,21 @@ function openPhotoSubPage(pageID) {
 	$('#bremen').css('display', 'none');
 	$('#akt').css('display', 'none');
 
-	$('#' + pageID).css('display', 'block');
+	$('#' + pageId).css('display', 'block');
+
+	if (pageId === 'photoindex') {
+		$('.photoindex').css('display', 'block');
+	} else {
+		$('.photoindex').css('display', 'none');
+	}
+
+	if (pageId === 'akt') {
+		$('.aktinfo').css('display', 'block');
+	} else {
+		$('.aktinfo').css('display', 'none');
+	}
+
+	return false;
 }
 
 function makeHyperlinks() {
