@@ -16,13 +16,13 @@ body, div, section, header, p, ul, li, h1, h2, h3, h4, menu, a, button, i {
 }
 
 body {
-	background-color: black;
+	background-color: rgb(17, 17, 17);
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
 
 .page {
-	margin-top: 160px;
+	margin-top: 50px;
 	font-size: 30px;
 }
 
@@ -35,7 +35,7 @@ h1 {
 
 h2 {
 	font-weight: 800;
-	font-size: 44px;
+	font-size: 32px;
 	text-transform: uppercase;
 }
 
@@ -43,15 +43,18 @@ h3, h4 {
 	font-weight: 600;
 }
 
+ul li a {
+	text-transform: uppercase;
+
+}
+
 p {
 	margin-top: 5px;
 	margin-bottom: 20px;
 	line-height: 24px;
-
 }
 
 blockquote p {
-	margin: 10px 0 100px 0;
 	font-size: 36px;
 	line-height: 42px;
 	font-weight: 800;
@@ -62,14 +65,14 @@ blockquote p {
 }
 
 a {
-	color: white;
-	text-decoration: underline;
+	color: #d6cbb0;
+	text-decoration: none;
+
 }
 
 a:hover {
-	color: #b69c74;
+	color: #d6cbb0;
 }
-
 
 .menu {
 	padding-top: 30px;
@@ -87,13 +90,22 @@ a:hover {
 	text-decoration: underline;
 }
 
+.photomenu {
+	margin-bottom: 50px;
+}
+
+.col-sm-6 img {
+	width: 100%;
+	height: auto;
+}
+
 footer {
-	border-top: #248d94 1px solid;
-	margin-top: 100px;
+	/*border-top: #333333 1px solid;*/
+	margin-top: 50px;
 	width: 100%;
 	min-height: 200px;
-	background-color: #0b353c;
-	padding: 10px 0 300px 0;
+	background-color: black;
+	padding: 50px 0 300px 0;
 }
 
 footer * {
@@ -135,7 +147,7 @@ footer .instafooter img {
 
 @media only screen and (max-width: 1000px) {
 	body {
-		background-image: url(img/background_1000.jpg);
+		/* background-image: url(img/background_1000.jpg); */
 	}
 
 	.menu a {
@@ -158,35 +170,126 @@ footer .instafooter img {
 	}
 }
 
+#startProfileImage blockquote {
+	width: 50%;
+	margin: 0 auto 0 auto;
+}
+
+#startProfileImage div {
+	border-radius: 200px;
+	width: 300px;
+	height: 300px;
+
+	border: white 5px solid;
+
+	display: block;
+	margin: 0 auto 50px auto;
+
+	background-image: url(img/profilbild.jpg);
+	background-size: cover;
+}
+
 @media only screen and (min-width: 1001px) and (max-width: 1200px) {
 	body {
-		background-image: url(img/background_1200.jpg);
+		/* background-image: url(img/background_1200.jpg); */
 	}
 }
 
 @media only screen and (min-width: 1201px) and (max-width: 1920px) {
 	body {
-		background-image: url(img/background_1920.jpg);
-	}
-
-	blockquote p {
-		margin: 60px 0 200px 0;
+		/* background-image: url(img/background_1920.jpg); */
 	}
 }
 
 @media only screen and (min-width: 1921px) {
 	body {
-		background-image: url(img/background_1920.jpg);
-	}
-
-	blockquote p {
-		margin: 60px 0 300px 0;
+		/* background-image: url(img/background_1920.jpg); */
 	}
 }
 
-#art img,
-#photography img {
+.imagegallery {
+
+}
+
+.imagegallery img {
 	width: 100%;
 	height: auto;
+	margin-bottom: 50px;
+	border: 7px solid white;
+}
+
+.imagegallery h2 {
+	margin-top: 0;
 	margin-bottom: 20px;
+}
+
+/* The Modal (background) */
+#modal {
+	display: none;
+	position: fixed;
+	z-index: 1042;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal Content (image) */
+.modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	z-index: 1044;
+}
+
+/* Caption of Modal Image */
+#caption {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 0;
+	height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)}
+	to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+	from {transform:scale(0)}
+	to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
 }
