@@ -15,14 +15,17 @@ $(document).ready(function () {
  */
 function openPage(pageId) {
 	$('#start').css('display', 'none');
-	$('#photography').css('display', 'none');
+	$('#portfolio').css('display', 'none');
+	$('#leistungen').css('display', 'none');
+	$('#privatesshooting').css('display', 'none');
+	$('#businessshooting').css('display', 'none');
 	$('#software').css('display', 'none');
 	$('#art').css('display', 'none');
 	$('#contact').css('display', 'none');
 	$('#privatepolicy').css('display', 'none');
 	$('#tfp').css('display', 'none');
 
-	if (pageId === 'privatepolicy' || pageId === 'photography' || pageId === 'software' || pageId === 'art') {
+	if (pageId === 'privatesshooting' || pageId === 'businessshooting' || pageId === 'privatepolicy' || pageId === 'portfolio' || pageId === 'leistungen' || pageId === 'software' || pageId === 'art') {
 		$('#' + pageId).css('display', 'block');
 	} else {
 		$('#' + pageId).css('display', 'flex');

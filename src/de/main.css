@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 body, div, section, header, p, h1, h2, h3, h4, menu, a, button, i {
@@ -9,14 +9,14 @@ body, div, section, header, p, h1, h2, h3, h4, menu, a, button, i {
 }
 
 body, div, section, header, p, ul, li, h1, h2, h3, h4, menu, a, button, i {
-	color: white;
-	font-family: 'Open Sans', sans-serif;
+	color: black;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
 	font-size: 20px;
 }
 
 body {
-	background-color: rgb(17, 17, 17);
+	background-color: white;
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
@@ -27,25 +27,41 @@ body {
 }
 
 h1 {
-	font-weight: 800;
-	font-size: 65px;
+	font-size: 60px;
 	text-transform: uppercase;
 	margin-bottom: 50px;
+	font-weight: 200;
 }
 
 h2 {
-	font-weight: 800;
-	font-size: 32px;
+	font-weight: 700;
+	font-size: 28px;
 	text-transform: uppercase;
 }
 
 h3, h4 {
-	font-weight: 600;
+	font-weight: 700;
 }
 
 ul li a {
 	text-transform: uppercase;
+}
 
+table {
+	width: 100%;
+	min-width: 800px;
+}
+
+table td, table th {
+	padding: 5px 3px 5px 3px;
+}
+
+table th {
+	border-bottom: white 3px solid;
+}
+
+table .line {
+	border-top: white 1px solid;
 }
 
 p {
@@ -58,36 +74,56 @@ blockquote p {
 	font-size: 36px;
 	line-height: 42px;
 	font-weight: 800;
-	font-style: italic;
 }
 
 .container {
 }
 
 a {
-	color: #d6cbb0;
+	color: black;
 	text-decoration: none;
-
 }
 
 a:hover {
-	color: #d6cbb0;
+	color: black;
 }
 
-.menu {
-	padding-top: 30px;
+button {
+	margin-top: 20px;
+	background-color: white;
+	padding: 5px 30px 5px 30px;
+	border-radius: 5px;
+	border: #333333 1px solid;
+	color: #333333;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+menu {
+	background-color: black;
+	padding: 10px;
 	text-align: right;
 }
 
-.menu a {
-	margin-left: 60px;
-	text-decoration: none;
-	font-weight: 400;
-	font-size: 24px;
+menu .container {
+	background-image: url("img/logo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding: 10px;
 }
 
-.menu a:hover {
+menu a {
+	margin-left: 25px;
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 18px;
+	color: white;
+}
+
+menu a:hover {
 	text-decoration: underline;
+	color: white;
 }
 
 .photomenu {
@@ -100,17 +136,18 @@ a:hover {
 }
 
 footer {
-	/*border-top: #333333 1px solid;*/
-	margin-top: 50px;
+	color: white;
+	margin-top: 75px;
 	width: 100%;
 	min-height: 200px;
 	background-color: black;
-	padding: 25px 0 300px 0;
+	padding: 25px 0 100px 0;
 }
 
 footer * {
 	font-size: 18px;
 	line-height: 36px;
+	color: white;
 }
 
 footer .footertext {
@@ -171,6 +208,10 @@ footer .instafooter img {
 	}
 }
 
+.page {
+	width: 100%;
+}
+
 #startProfileImage blockquote {
 	width: 50%;
 	margin: 0 auto 0 auto;
@@ -190,23 +231,24 @@ footer .instafooter img {
 	background-size: cover;
 }
 
+/*
 @media only screen and (min-width: 1001px) and (max-width: 1200px) {
 	body {
-		/* background-image: url(img/background_1200.jpg); */
+		background-image: url(img/background_1200.jpg);
 	}
 }
 
 @media only screen and (min-width: 1201px) and (max-width: 1920px) {
 	body {
-		/* background-image: url(img/background_1920.jpg); */
+		background-image: url(img/background_1920.jpg);
 	}
 }
 
 @media only screen and (min-width: 1921px) {
 	body {
-		/* background-image: url(img/background_1920.jpg); */
+		background-image: url(img/background_1920.jpg);
 	}
-}
+}*/
 
 .imagegallery {
 
@@ -293,4 +335,33 @@ footer .instafooter img {
 	color: #bbb;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+.moneyDont {
+	font-size: 40px;
+	text-decoration: line-through;
+	font-weight: 400;
+	color: #999999;
+}
+
+.money {
+	font-size: 65px;
+	color: #ffd200;
+	font-weight: 400;
+}
+
+.euroDont {
+	font-size: 20px;
+	font-weight: 400;
+	color: #999999;
+}
+
+.euro {
+	font-size: 30px;
+	color: #ffd200;
+	font-weight: 400;
+}
+
+.shootingdescription {
+	height: 100px;
 }
