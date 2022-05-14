@@ -1,12 +1,16 @@
 $(document).ready(function () {
-	openPhotoSubPage('photoindex');
-
-	if (location.search.match(new RegExp("tfp"))) {
-		openPage('tfp');
+	if ("onhashchange" in window) {
+		window.onhashchange = function() {
+			openPage(window.location.hash.replace(/#/gi, ''));
+		}
 	}
-	else {
+
+	if (window.location.hash) {
+		openPage(window.location.hash.replace(/#/gi, ''))
+	} else {
 		openPage('start');
 	}
+
 });
 
 /**
@@ -15,6 +19,8 @@ $(document).ready(function () {
  */
 function openPage(pageId) {
 	$('#start').css('display', 'none');
+	$('#buchen').css('display', 'none');
+	$('#bewerben').css('display', 'none');
 	$('#portfolio').css('display', 'none');
 	$('#leistungen').css('display', 'none');
 	$('#privatesshooting').css('display', 'none');
@@ -25,13 +31,15 @@ function openPage(pageId) {
 	$('#privatepolicy').css('display', 'none');
 	$('#tfp').css('display', 'none');
 
-	if (pageId === 'privatesshooting' || pageId === 'businessshooting' || pageId === 'privatepolicy' || pageId === 'portfolio' || pageId === 'leistungen' || pageId === 'software' || pageId === 'art') {
-		$('#' + pageId).css('display', 'block');
-	} else {
+	$('#' + pageId).css('display', 'block');
+	/*
+	if (pageId === 'sstart') {
 		$('#' + pageId).css('display', 'flex');
-	}
+	} else {
 
-	openPhotoSubPage('photoindex');
+	}*/
+
+	//openPhotoSubPage('photoindex');
 
 	return false;
 }

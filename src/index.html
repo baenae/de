@@ -51,9 +51,9 @@
 
 		<!-- own code -->
 		<link
-				href="./de/main.css?usecache=niemalsbaby"
+				href="./de/main.css?usecache=niemalsddbaby233"
 				rel="stylesheet">
-		<script src="./de/app.js?usecache=niemalsbaby"></script>
+		<script src="./de/app.js?usecache=niemalsddbaby33"></script>
 	</head>
 	<body>
 		<!-- The Modal -->
@@ -71,51 +71,87 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xl">
-						<a
-								href="#"
-								onclick="openPage('start')">Startseite
-						</a>
-						<a
-								href="#"
-								onclick="openPage('leistungen')">Leistungen
-						</a>
-						<a
-								href="#"
-								onclick="openPage('portfolio')">Portfolio
-						</a>
+						<a href="#start">Start</a>
+						<a href="#leistungen">Leistungen</a>
+						<a href="#portfolio">Portfolio</a>
 					</div>
 				</div>
 			</div>
 		</menu>
 
 		<!-- START -->
-		<div
-				class="container"
-				id="start">
-			<div class="row page">
-				<div class="col-sm-6" id="startProfileImage">
+		<div class="container page" id="start">
+			<div class="row">
+				<div class="col-sm-7" id="startProfileImage">
 					<div>&nbsp;</div>
 
 				</div>
 
-				<div class="col-sm-6">
+				<div class="col-sm-5">
 					<h1>Bänä Fotografie</h1>
-					<p>lala lala lala lala lala lala lala lala lala lala lala lala </p>
+					<p>Professionelle Fotografie aus Bremen. Alles rund um Menschen und Business. City und Landschaft.</p>
+					<p>Achtung: <strong>Keine Party/Event Fotografie.</strong>. Keine Hochzeiten, Geburtstage, Firmenfeste oder andere Arten
+						von Veranstaltungsfotografie.</p>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Buchen -->
+		<div class="container page" id="buchen">
+			<div class="row">
+				<div class="col-sm-6" >
+					<h1>Buchen</h1>
+					<p>Einfach über E-Mail, WhatsApp, Telefon oder Instagram melden. Dann können wir uns über das Projekt, Zeit und Termine abstimmen.</p>
+					<ul>
+						<li>E-Mail: baenae@gmx.de</li>
+						<li>Telefon: 0174-9198703</li>
+						<li>Instagram: baenae.de</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-5">
+					<img src="de/fotografie/shooting.jpg" alt="Foto eines Shootings">
+				</div>
+			</div>
+		</div>
+
+		<!-- Bewerben -->
+		<div class="container page" id="bewerben">
+			<div class="row">
+				<div class="col-sm-6" >
+					<h1>Bewerben</h1>
+					<p>Grundsätzlich kann man mich gerne <a href="#buchen">buchen</a>. Ich arbeite auch umsonst auf TFP-Basis, aber das mache ich natürlich nicht aus reiner Nächstenliebe.</p>
+					<h3>Warum TFP?</h3>
+					<ul>
+						<li>Du bist anders und mit dir wird mein Portfolio erst richtig rund</li>
+						<li>Du bist besonders hübsch, dich muss man einfach fotografieren</li>
+						<li>Du hast eine besonders große Reichweite</li>
+						<li>Du hast eine tolle Idee für ein Shooting</li>
+						<li>Du hast einen anderen tollen Grund?</li>
+					</ul>
+					<h3>Ja? So erreichst du mich</h3>
+					<p>Einfach über E-Mail, WhatsApp, Telefon oder Instagram melden. Dann können wir uns über das Projekt, Zeit und Termine abstimmen.</p>
+					<ul>
+						<li>E-Mail: baenae@gmx.de</li>
+						<li>Telefon: 0174-9198703</li>
+						<li>Instagram: baenae.de</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-5">
+					<img src="de/fotografie/shooting.jpg" alt="Foto eines Shootings">
 				</div>
 			</div>
 		</div>
 
 		<!-- Leistungen -->
-		<div class="container" id="leistungen">
-			<div class="row page">
-				<div class="col-sm-12">
-					<h1>Leistungsübersicht</h1>
-				</div>
-			</div>
-
+		<div class="container page" id="leistungen">
 			<div class="row">
 				<div class="col-sm-6">
-					<p>Du hast Lust auf ein Shooting oder du brauchst Fotos von deiner Firma, Mitarbeitern oder Produkten? Dann melde dich gerne. Gerne erstelle ich dir ein maßgeschneidertes Angebot.</p>
+					<h1>Leistungs-übersicht</h1>
+					<p>Du hast Lust auf ein Shooting oder du brauchst Fotos von deiner Firma, Mitarbeitern oder Produkten? Dann melde dich
+						gerne. Gerne erstelle ich dir ein maßgeschneidertes Angebot.</p>
 				</div>
 			</div>
 
@@ -125,9 +161,15 @@
 						<tbody>
 							<tr>
 								<th></th>
-								<th><strong><a href="#" onclick="openPage('privatesshooting')">Privates Shooting</a></strong></th>
-								<th><strong><a href="#" onclick="openPage('tfp')">TFP-Shooting</a></strong></th>
-								<th><strong><a href="#" onclick="openPage('businessshooting')">Business Shooting</a></strong></th>
+								<th><strong>
+									<a href="#privatesshooting">Privates Shooting</a>
+								</strong></th>
+								<th><strong>
+									<a href="#tfp">TFP-Shooting</a>
+								</strong></th>
+								<th><strong>
+									<a href="#businessshooting">Business Shooting</a>
+								</strong></th>
 							</tr>
 							<tr>
 								<td>Preis</td>
@@ -177,13 +219,13 @@
 							<tr>
 								<td></td>
 								<td>
-									<button href="#" onclick="openPage('privatesshooting')">Details</button>
+									<a class="button" href="#privatesshooting">Details</a>
 								</td>
 								<td>
-									<button href="#" onclick="openPage('tfp')">Details</button>
+									<a class="button" href="#tfp">Details</a>
 								</td>
 								<td>
-									<button href="#" onclick="openPage('businessshooting')">Details</button>
+									<a class="button" href="#businessshooting">Details</a>
 								</td>
 							</tr>
 						</tbody>
@@ -193,25 +235,29 @@
 
 			<div class="row" style="margin-top: 50px;">
 				<div class="col-sm-6">
-					<h3>Keine Party, Hochzeits  und Eventfotografie</h3>
-					<p>Um klar abzugrenzen was ich fotografiere und was nicht. <strong>Keine Leistungen</strong> von mir sind: Eventfotografie, Hochzeitsfeiern, (Geburtstags-) Partys, Feste jedweder Art. Ich bitte von Anfragen abzusehen.</p>
+					<h3>Keine Party, Hochzeits und Eventfotografie</h3>
+					<p>Um klar abzugrenzen was ich fotografiere und was nicht. <strong>Keine Leistungen</strong> von mir sind:
+						Eventfotografie, Hochzeitsfeiern, (Geburtstags-) Partys, Feste jedweder Art. Ich bitte von Anfragen abzusehen.</p>
 				</div>
 			</div>
 		</div>
 
 		<!-- SHOOTING - Privat -->
-		<div class="container" id="privatesshooting">
-			<div class="row page">
+		<div class="container page" id="privatesshooting">
+			<div class="row">
 				<div class="col-sm-6">
 					<h1>Privates-Shooting</h1>
 				</div>
-				<div class="col-sm-6"></div>
+				<div class="col-sm-2"></div>
+				<div class="col-sm-4"><span class="money">-25%</span> Anfangsangebot</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-4">
 					<h2>Outdoor Mini</h2>
-					<span class="euroDont">€</span> <span class="moneyDont">75</span> <span class="euro">€</span> <span class="money">55</span>
-					<p class="shootingdescription">Wir treffen uns an einer schönen Location und machen mit dem vorhandenen Licht ein paar tolle Fotos.</p>
+					<span class="euroDont">€</span> <span class="moneyDont">75</span> <span class="euro">€</span>
+					<span class="money">55</span>
+					<p class="shootingdescription">Wir treffen uns an einer schönen Location und machen mit dem vorhandenen Licht ein paar
+						tolle Fotos.</p>
 
 					<h3>Features</h3>
 					<ul>
@@ -222,13 +268,18 @@
 						<li>Wetterabhängig</li>
 					</ul>
 
-					<button>Jetzt Buchen</button>
+					<a class="button" href="#buchen">Jetzt Buchen</a>
+					<br>
+					<br>
+					<br>
 				</div>
 
 				<div class="col-sm-4">
 					<h2>Standard</h2>
-					<span class="euroDont">€</span> <span class="moneyDont">250</span> <span class="euro">€</span> <span class="money">185</span>
-					<p class="shootingdescription">Normales Shooting im Home-Studio oder einer Location deiner Wahl. Mit Blitzen und allem was dazugehört.</p>
+					<span class="euroDont">€</span> <span class="moneyDont">250</span> <span class="euro">€</span>
+					<span class="money">185</span>
+					<p class="shootingdescription">Normales Shooting im Home-Studio oder einer Location deiner Wahl. Mit Blitzen und allem
+						was dazugehört.</p>
 
 					<h3>Features</h3>
 					<ul>
@@ -239,13 +290,17 @@
 						<li>Blitz und/oder LED-Dauerlicht</li>
 					</ul>
 
-					<button>Jetzt Buchen</button>
+					<a class="button" href="#buchen">Jetzt Buchen</a>
+					<br>
+					<br>
+					<br>
 				</div>
 
 				<div class="col-sm-4">
 					<h2>XXL</h2>
-					<span class="euroDont">€</span> <span class="moneyDont">400</span> <span class="euro">€</span> <span class="money">300</span>
-					<p class="shootingdescription">Wie Standard nur it noch mehr Glam!</p>
+					<span class="euroDont">€</span> <span class="moneyDont">400</span> <span class="euro">€</span>
+					<span class="money">300</span>
+					<p class="shootingdescription">Wie Standard nur mit noch viel mehr Glam!</p>
 
 					<h3>Features</h3>
 					<ul>
@@ -257,16 +312,17 @@
 						<li>Sehr Aufwendige Setups möglich</li>
 					</ul>
 
-					<button>Jetzt Buchen</button>
+					<a class="button" href="#buchen">Jetzt Buchen</a>
+					<br>
+					<br>
+					<br>
 				</div>
 			</div>
 		</div>
 
 		<!-- SHOOTING - TFP -->
-		<div
-				class="container"
-				id="tfp">
-			<div class="row page">
+		<div class="container page" id="tfp">
+			<div class="row">
 				<div class="col-sm-5">
 					<h1>TFP shooting</h1>
 					<h3>Was ist ein TFP Shooting?</h3>
@@ -326,14 +382,14 @@
 					<img src="de/fotografie/shooting.jpg" alt="Foto eines Shootings">
 					<br>
 					<br>
-					<button>Jetzt Bewerben</button>
+					<a class="button" href="#bewerben">Jetzt Bewerben</a>
 				</div>
 			</div>
 		</div>
 
 		<!-- SHOOTING - BUSINESS -->
-		<div class="container" id="businessshooting">
-			<div class="row page">
+		<div class="container page" id="businessshooting">
+			<div class="row">
 				<div class="col-sm-5">
 					<h1>Business-Shooting</h1>
 					<ul>
@@ -357,23 +413,21 @@
 					</ul>
 					<br>
 					Beispiele für Business Shooting sind zu findest du unter:
-					<a href="#" onclick="openPage('portfolio')">Portfolio Business-Shooting</a>
+					<a href="portfolio">Portfolio Business-Shooting</a>
 				</div>
 				<div class="col-sm-1">&nbsp;</div>
 				<div class="col-sm-6">
 					<img src="de/fotografie/shooting.jpg" alt="Foto eines Shootings">
 					<br>
 					<br>
-					<button>Jetzt Buchen</button>
+					<a class="button" href="#buchen">Jetzt Buchen</a>
 				</div>
 			</div>
 		</div>
 
 		<!-- FOTO -->
-		<div
-				class="container"
-				id="portfolio">
-			<div class="row page">
+		<div class="container page" id="portfolio">
+			<div class="row">
 				<div class="col-sm-6">
 					<h1>Portfolio</h1>
 				</div>
@@ -401,12 +455,7 @@
 							<a href="#" onclick="openPhotoSubPage('produkt')">Produktfotografie</a>
 						</li>
 					</ul>
-					<p class="photoindex">
-						Fotografie ist eins meiner Hobbies und meine große Leidenschaft. Mit der Informatik verdiene ich mein Geld
-						und mit
-						der Fotografie gebe ich es wieder aus.
-					</p>
-					<p class="photoindex">
+					<p>
 						Mehr Fotos findest du auf meinen Instagram Seiten.
 					</p>
 				</div>
@@ -498,9 +547,7 @@
 		</div>
 
 		<!-- DATEN SCHUTZ -->
-		<div
-				class="container page"
-				id="privatepolicy">
+		<div class="container page" id="privatepolicy">
 			<div class="row">
 				<div class="col-sm-8">
 					<h1>Datenschutz</h1>
@@ -511,9 +558,7 @@
 					<p>
 
 					<p>
-						<a
-								href="#"
-								onclick="openPage('contact')">Benjamin Sasse <br />
+						<a href="#contact">Benjamin Sasse <br />
 							Siehe Webseitenbereiber
 						</a>
 					</p>
@@ -612,10 +657,8 @@
 		</div>
 
 		<!-- CONTACT -->
-		<div
-				class="container"
-				id="contact">
-			<div class="row page">
+		<div class="container page" id="contact">
+			<div class="row">
 				<div class="col-sm-6">
 					<h1>Impressum/</br>Kontakt</h1>
 					<p>Die folgenden Angaben entsprechen den Vorgaben von § 5 TMG:</p>
@@ -634,9 +677,9 @@
 
 					<h3>Umsatzsteuer:</h3>
 					<p>
-						Es handelt sich um eine nicht kommerzielle, rein private Webseite und es ist keine Umsatzsteuernummer
-						vorhanden oder
-						notwendig.
+						Umsatzsteuer:
+						Keine Umsatzsteuer-Identifikationsnummer. Kleinunternehmer gemäß i. S. v. § 19 Abs. 1 UStG von der Umsatzsteuer
+						befreit.
 					</p>
 
 					<h3>Haftung für Inhalte:</h3>
@@ -660,16 +703,10 @@
 					<div class="col-sm">
 						<h2>Rechtliches</h2>
 						<div>
-							<a
-									href="#"
-									onclick="openPage('contact')">Kontakt/Impressum
-							</a>
+							<a href="#contact">Kontakt/Impressum</a>
 						</div>
 						<div>
-							<a
-									href="#"
-									onclick="openPage('privatepolicy')">Datenschutz
-							</a>
+							<a href="#privatepolicy">Datenschutz</a>
 						</div>
 					</div>
 					<div class="col-sm">
@@ -708,6 +745,7 @@
 						</div>
 					</div>
 					<div class="col-sm footertext">
+						<h3>Bänä Fotografie</h3>
 						Programmierung und alle Bilder von Benjamin <strong style="font-style: italic;">„Bänä“</strong> Sasse 2022
 					</div>
 				</div>
