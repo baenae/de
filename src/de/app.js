@@ -19,6 +19,7 @@ $(document).ready(function () {
  */
 function openPage(pageId) {
 	$('#start').css('display', 'none');
+	$('#businessshootingshowcase').css('display', 'none');
 	$('#buchen').css('display', 'none');
 	$('#bewerben').css('display', 'none');
 	$('#portfolio').css('display', 'none');
@@ -81,4 +82,10 @@ function makeHyperlinks() {
 			$('#img01').attr('src', linkSrc);
 		});
 	});
+}
+
+function openImage(src) {
+	$('#modal').modal('show');
+	$('#img01').attr('src', src);
+	return false;
 }

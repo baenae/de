@@ -24,14 +24,26 @@ body {
 .page {
 	margin-top: 50px;
 	font-size: 30px;
-
 	min-height: calc(100vh - 550px);
+}
+
+.row {
+	margin-bottom: 25px;
+}
+
+.page img {
+	width: 100%;
+	height: auto;
+}
+
+menu .row {
+	margin: 0;
 }
 
 h1 {
 	font-size: 60px;
 	text-transform: uppercase;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	font-weight: 200;
 }
 
@@ -108,19 +120,22 @@ a:hover {
 
 menu {
 	background-color: black;
-	padding: 10px;
+	padding: 15px 0 15px 0;
+}
+
+menu img {
+	height: 50px;
+	width: auto;
+	display: block;
+}
+
+menu .mymenu {
 	text-align: right;
+	padding-top: 10px;
 }
 
-menu .container {
-	background-image: url("img/logo.png");
-	background-repeat: no-repeat;
-	background-size: contain;
-	padding: 10px;
-}
-
-menu a {
-	margin-left: 25px;
+menu .mymenu a {
+	padding-left: 20px;
 	text-decoration: none;
 	font-weight: 400;
 	font-size: 18px;
@@ -132,8 +147,32 @@ menu a:hover {
 	color: white;
 }
 
-.photomenu {
-	margin-bottom: 50px;
+#portfolio a {
+	display: block;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	border: 1px white solid;
+	text-decoration: none;
+}
+
+#portfolio a span {
+	margin-top: 220px;
+	padding: 10px;
+	display: block;
+	width: 100%;
+	text-align: center;
+	background-color: #EFEFEF;
+
+	text-transform: uppercase;
+	font-size: 16px;
+
+	font-weight: 400;
+}
+
+#portfolio a:hover span {
+	background-color: #666666;
+	color: white;
 }
 
 .col-sm-6 img {
@@ -370,4 +409,9 @@ footer .instafooter img {
 
 .shootingdescription {
 	height: 100px;
+}
+
+#businessshootingshowcase img {
+	width: calc(50% - 15px);
+	margin: 0 10px 10px 0;
 }
