@@ -31,6 +31,7 @@ function openPage(pageId) {
 	$('#contact').css('display', 'none');
 	$('#privatepolicy').css('display', 'none');
 	$('#tfp').css('display', 'none');
+	$('#todo').css('display', 'none');
 
 	$('#' + pageId).css('display', 'block');
 	/*
