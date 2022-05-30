@@ -117,14 +117,16 @@ a:hover {
 }
 
 .button {
-	margin-top: 20px;
+	display: block;
+	margin: 20px 20px 40px 0;
+	width: auto;
 	background-color: white;
-	padding: 5px 30px 5px 30px;
+	padding: 10px 30px 10px 30px;
+	text-align: center;
 	border-radius: 5px;
-	border: #333333 1px solid;
+	border: #666666 1px solid;
 	color: #333333;
 	text-transform: uppercase;
-	font-weight: 400;
 	font-size: 14px;
 }
 
@@ -274,15 +276,30 @@ footer .instafooter img {
 	width: 100%;
 }
 
-
-#startProfileImage  {
+#startProfileImageContainer  {
 	max-width: 100%;
 	width: auto;
 	height: auto;
+	padding-bottom: 30px;
 
+	min-width: 360px;
+	min-height: 360px;
 
-	background-image: url();
+	text-align: center;
+}
+
+#startProfileImage {
+	width: 100%;
+	border-radius: 50%;
+
+	background-color: #F29F05;
+	background-image: url("img/profilbild.png");
 	background-size: cover;
+	background-repeat: no-repeat;
+
+	padding-top: 100%; /* 1:1 Aspect Ratio */
+
+	transition: background-color 0.5s;
 }
 
 /*

@@ -12,6 +12,17 @@ $(document).ready(function () {
 	}
 
 	document.addEventListener('contextmenu', event => event.preventDefault());
+
+	setInterval(function() {
+		var random = Math.floor(Math.random() * 10);
+		if (random > 6) {
+			$('#startProfileImage').css('backgroundColor', '#A62014');
+		} else if (random > 3) {
+			$('#startProfileImage').css('backgroundColor', '#F29F05');
+		} else {
+			$('#startProfileImage').css('backgroundColor', '#03658C');
+		}
+	}, 3000);
 });
 
 /**
@@ -19,28 +30,14 @@ $(document).ready(function () {
  * @param pageId - Was hat der User geklicked
  */
 function openPage(pageId) {
-	$('#start').css('display', 'none');
-	$('#businessshootingshowcase').css('display', 'none');
-	$('#buchen').css('display', 'none');
-	$('#bewerben').css('display', 'none');
-	$('#portfolio').css('display', 'none');
-	$('#leistungen').css('display', 'none');
-	$('#privatesshooting').css('display', 'none');
-	$('#businessshooting').css('display', 'none');
-	$('#software').css('display', 'none');
-	$('#art').css('display', 'none');
-	$('#contact').css('display', 'none');
-	$('#privatepolicy').css('display', 'none');
-	$('#tfp').css('display', 'none');
-	$('#composingshowcase').css('display', 'none');
-	$('#productphotographyshowcase').css('display', 'none');
-	$('#portraitshowcase').css('display', 'none');
-	$('#aktshowcase').css('display', 'none');
-	$('#landscapeshowcase').css('display', 'none');
-	$('#todo').css('display', 'none');
+	var pages = ['start', 'businessshootingshowcase', 'buchen', 'bewerben', 'portfolio', 'leistungen', 'privatesshooting', 'businessshooting', 'software', 'art', 'contact', 'privatepolicy', 'tfp', 'composingshowcase', 'productphotographyshowcase', 'portraitshowcase', 'aktshowcase', 'landscapeshowcase', 'todo'];
+	for (var page of pages) {
+		$('#' + page).css('display', 'none');
+	}
+
+	window.scrollTo(0, 0);
 
 	$('#' + pageId).css('display', 'block');
-
 	return false;
 }
 
