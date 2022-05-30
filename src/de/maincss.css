@@ -84,7 +84,11 @@ table th a {
 }
 
 table .line {
-	border-top: white 1px solid;
+	border-top: #CCCCCC 1px solid;
+}
+
+table .preline {
+	padding-left: 20px;
 }
 
 p {
@@ -270,22 +274,14 @@ footer .instafooter img {
 	width: 100%;
 }
 
-#startProfileImage blockquote {
-	width: 50%;
-	margin: 0 auto 0 auto;
-}
 
-#startProfileImage div {
-	border-radius: 200px;
-	width: 300px;
-	height: 300px;
+#startProfileImage  {
+	max-width: 100%;
+	width: auto;
+	height: auto;
 
-	border: white 5px solid;
 
-	display: block;
-	margin: 0 auto 50px auto;
-
-	background-image: url(img/profilbild.jpg);
+	background-image: url();
 	background-size: cover;
 }
 
