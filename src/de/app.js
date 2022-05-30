@@ -22,7 +22,7 @@ $(document).ready(function () {
 		} else {
 			$('#startProfileImage').css('backgroundColor', '#03658C');
 		}
-	}, 3000);
+	}, 2000);
 });
 
 /**
